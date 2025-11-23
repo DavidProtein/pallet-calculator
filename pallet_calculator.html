@@ -472,6 +472,9 @@
             <th class="input-column">Cases per Layer</th>
             <th class="input-column">Layers per Pallet</th>
             <th class="input-column">Bar Weight (g)</th>
+            <th class="input-column">Length (in)</th>
+            <th class="input-column">Width (in)</th>
+            <th class="input-column">Height (in)</th>
             <th class="separator-column"></th>
             <th class="derived">Bars per Case</th>
             <th class="derived">Bars / Pallet</th>
@@ -509,6 +512,9 @@
         casesPerLayer: 21,
         layersPerPallet: 7,
         barWeight: 58,
+        length: 46.81,
+        width: 38.75,
+        height: 51,
         cartonWeightOverride: 0.56,
         caseWeightOverride: 5.05,
         palletWeightOverride: 516.10
@@ -520,6 +526,9 @@
         casesPerLayer: 21,
         layersPerPallet: 7,
         barWeight: 62,
+        length: 46.81,
+        width: 38.75,
+        height: 51,
         cartonWeightOverride: 0.60,
         caseWeightOverride: 5.41,
         palletWeightOverride: 794.80
@@ -531,6 +540,9 @@
         casesPerLayer: 19,
         layersPerPallet: 6,
         barWeight: 58,
+        length: 46.81,
+        width: 38.75,
+        height: 54.5,
         cartonWeightOverride: 1.68,
         caseWeightOverride: 10.11,
         palletWeightOverride: 606.90
@@ -542,6 +554,9 @@
         casesPerLayer: 19,
         layersPerPallet: 6,
         barWeight: 62,
+        length: 46.81,
+        width: 38.75,
+        height: 54.5,
         cartonWeightOverride: 1.81,
         caseWeightOverride: 10.82,
         palletWeightOverride: 1233
@@ -629,6 +644,9 @@
           <td class="input-column tabular">${formatNum(row.casesPerLayer)}</td>
           <td class="input-column tabular">${formatNum(row.layersPerPallet)}</td>
           <td class="input-column tabular">${formatNum(row.barWeight || 0)}</td>
+          <td class="input-column tabular">${formatNum(row.length || 0)}</td>
+          <td class="input-column tabular">${formatNum(row.width || 0)}</td>
+          <td class="input-column tabular">${formatNum(row.height || 0)}</td>
           <td class="separator-column"></td>
           <td class="derived tabular">${formatNum(derived.barsPerCase)}</td>
           <td class="derived tabular kpi">${formatNum(derived.barsPerPallet)}</td>
@@ -707,14 +725,17 @@
           'Cases per Layer',
           'Layers per Pallet',
           'Bar Weight (g)',
+          'Length (in)',
+          'Width (in)',
+          'Height (in)',
           'Bars per Case',
           'Bars / Pallet',
           'Cartons / Layer',
           'Cartons / Pallet',
           'Cases / Pallet',
-          'Carton Weight (lbs)',
-          'Case Weight (lbs)',
-          'Pallet Weight (lbs)'
+          'Gross Carton Weight (lbs)',
+          'Gross Case Weight (lbs)',
+          'Gross Pallet Weight (lbs)'
         ];
 
         const data = [headers];
@@ -733,6 +754,9 @@
             row.casesPerLayer,
             row.layersPerPallet,
             row.barWeight || 0,
+            row.length || 0,
+            row.width || 0,
+            row.height || 0,
             derived.barsPerCase,
             derived.barsPerPallet,
             derived.cartonsPerLayer,
@@ -810,4 +834,5 @@
   </script>
 </body>
 </html>
+
 
